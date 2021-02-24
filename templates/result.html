@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="row">
+</div>
+<div class="row">
+    <div class="col s4 offset-s4">
+        <img id="upload_img" img class="responsive-img" src={{upload_file}} alt="アップロード画像">
+    </div>
+</div>
+<div class="row">
+    <div class="col s4 center offset-s4">
+        <div class="card-panel teal lighten-4">これは{{result}}です。</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s4 center offset-s4">
+        <button class="btn waves-effect waves-lightr blue" name="top" onclick="location.href='/'">トップページヘ戻る</button>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="row">
+    <div class="col s8 offset-s2">
+        <form id="upload_image" action="/" method="post" enctype="multipart/form-data">
+            <div class="file-field input-field row">
+                <div class="btn col s2">
+                    <span>ファイルを選択</span>
+                    <input type="file" name="file" required>
+                </div>
+                <div class="file-path-wrapper col s8">
+                    <input class="file-path validate" placeholder="動物の画像を選択してください" type="text">
+                </div>
+                <div class="col s2">
+                    <button class="btn waves-effect waves-light blue" type="submit" name="action">表示
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col s5 offset-s3">
+        <img id="upload_img" img class="responsive-img" src ={{upload_file}} alt="アップロード画像">
+    </div>
+    <div class="col s1">
+        <form id="pred_btn" action="/v1/predict" method="post" enctype="multipart/form-data">
+            <button class="btn waves-effect waves-light blue" type="submit" name="image" value={{upload_file}}>予測
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
